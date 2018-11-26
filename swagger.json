@@ -1,0 +1,80 @@
+{
+  "apis": [
+    "index.js"
+  ],
+  "info": {
+    "title": "Example Swagger API",
+    "version": "1.0.0",
+    "description": "This is the Example API documentation and is using the OpenAPI spec."
+  },
+  "basePath": "/",
+  "swagger": "2.0",
+  "paths": {
+    "/api/users": {
+      "get": {
+        "tags": [
+          "users"
+        ],
+        "description": "Returns all users",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "An array of users",
+            "schema": {
+              "$ref": "#/definitions/users"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "users"
+        ],
+        "description": "Creates a new user",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "tarun",
+            "description": "user object",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/user"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully created"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "users": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "age": {
+          "type": "integer"
+        },
+        "sex": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "responses": {},
+  "parameters": {},
+  "securityDefinitions": {},
+  "tags": []
+}
